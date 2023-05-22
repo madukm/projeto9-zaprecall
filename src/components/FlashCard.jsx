@@ -35,7 +35,7 @@ export default function FlashCard({number, content, nQuestions, setNQuestions}) 
             {cardState === 'back' && 
                 <TurnedDownCard style={resultStyle}>
                     <h2 data-test="flashcard-text">Pergunta {number}</h2>
-                    <img src={cardIcon} onClick={() => setCardState('question')} data-test={iconDataTest}/>
+                    <img src={cardIcon} onClick={() => cardIcon === playArrow && setCardState('question')} data-test={iconDataTest}/>
                 </TurnedDownCard>     
             }
             {cardState === 'question' && 
