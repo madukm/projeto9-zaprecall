@@ -3,9 +3,11 @@ import logo from '../assets/logo.png';
 import Deck from './Deck';
 import Footer from './Footer';
 import cards from "../cards";
+import { useState } from 'react';
 
-export default function Game({nQuestions}) {
+export default function Game() {
     const totalQuestions = cards.length;
+    let [nQuestions, setNQuestions] = useState(0);
 
     return (
         <GameContainer>
@@ -13,7 +15,7 @@ export default function Game({nQuestions}) {
                 <img src={logo} />
                 <h1>ZapRecall</h1>
             </div>
-            <Deck cards={cards}/>
+            <Deck cards={cards} nQuestions={nQuestions} setNQuestions={setNQuestions}/>
             <Footer nQuestions={nQuestions} totalQuestions={totalQuestions}/>
         </GameContainer>
     );
@@ -26,16 +28,17 @@ const GameContainer = styled.div`
     align-items: center;
 
     .logo {
+        width: 100%;
+        height: 153px;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background-color: #FB6B6B;
+        
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        position: fixed;
-        height: 153px;
-        top: 0;
-        z-index: 1;
-        width: 100%;
-        background-color: #FB6B6B;
         
         img {
             width: 52px;

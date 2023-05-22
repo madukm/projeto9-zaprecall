@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function Footer ({nQuestions, totalQuestions}) {
     return (
         <FooterContainer>
-            <h3>{nQuestions}/{totalQuestions} CONCLUÍDOS</h3>
+            <h3 data-test="footer">{nQuestions}/{totalQuestions} CONCLUÍDOS</h3>
         </FooterContainer>
     );
 };
