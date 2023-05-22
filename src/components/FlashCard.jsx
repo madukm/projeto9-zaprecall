@@ -48,13 +48,13 @@ export default function FlashCard({number, content, nQuestions, setNQuestions}) 
                 <AnswerCard>
                     <h2 data-test="flashcard-text">{content.answer}</h2>
                     <div className='buttons'>
-                        <button className='wrong' onClick={() => checkResult('wrong')}>
+                        <button className='wrong' onClick={() => checkResult('wrong')} data-test="no-btn">
                             Não lembrei
                         </button>
-                        <button className='almost' onClick={() => checkResult('almost')}>
+                        <button className='almost' onClick={() => checkResult('almost')} data-test="partial-btn">
                             Quase não lembrei
                         </button>
-                        <button className='correct' onClick={() => checkResult('correct') }>
+                        <button className='correct' onClick={() => checkResult('correct')} data-test="zap-btn">
                             Zap!
                         </button>
                     </div>
