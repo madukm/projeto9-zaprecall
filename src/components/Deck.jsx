@@ -22,6 +22,8 @@ export default function Deck({cards, nQuestions, setNQuestions}) {
 const DeckContainer = styled.div`
     display: flex;
     margin-top: 153px;
+    margin-bottom: 70px;
+    padding: 10px 0;
     flex-direction: column;
     gap: 25px;
     
